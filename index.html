@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f4f0e7">
+<title>Bloom’s Taxonomy Pyramid Game</title>
+<style>
+:root{color-scheme:light;--paper:#f4f0e7;--card:#fffdf8;--ink:#24252b;--muted:#6e7078;--blue:#2028c8;--line:#d8d3c8;--gold:#f0c85a;--green:#176b4a;--red:#b23c45;--shadow:0 14px 40px #29271912}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 18% 5%,#fffdf7 0,transparent 38%),var(--paper);color:var(--ink);font:16px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.shell{max-width:1080px;margin:auto;padding:28px 20px 44px}.topline{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:24px}.brand{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.mark{display:grid;place-items:center;width:34px;height:34px;border:2px solid var(--ink);background:var(--gold);font-weight:900}.pill{border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:var(--muted);font-size:12px}.hero{max-width:720px;margin:0 auto 24px;text-align:center}.eyebrow{margin:0 0 8px;color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}h1{margin:0;color:var(--blue);font-size:clamp(32px,6vw,56px);line-height:1.03;letter-spacing:-.055em}.sub{margin:12px 0 0;color:var(--muted)}.layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:20px;align-items:start}.panel{border:1px solid var(--line);border-radius:18px;background:var(--card);box-shadow:var(--shadow)}.pyramid-panel{padding:20px}.panel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}.panel-head h2,.bank h2{margin:0;font-size:15px}.tiny{font-size:11px;color:var(--muted)}.pyramid{display:grid;justify-items:center;gap:8px;padding:8px 0 14px}.slot{display:flex;align-items:center;justify-content:center;position:relative;min-height:58px;width:var(--w);padding:7px;border:2px dashed #c8c3b9;border-radius:12px;background:#f8f5ed;transition:.15s}.slot::before{content:attr(data-level);position:absolute;left:10px;color:#88847a;font:700 11px ui-monospace,monospace}.slot.over{border-color:var(--blue);background:#f0efff;transform:scale(1.02)}.slot.correct{border-style:solid;border-color:#86b99d;background:#e8f5ec}.slot.wrong{border-color:#d79092;background:#fff0ef}.slot .card{width:min(78%,300px);min-height:40px}.slot .slot-label{position:absolute;right:10px;bottom:3px;color:#aaa398;font-size:9px;letter-spacing:.08em;text-transform:uppercase;pointer-events:none}.cards{display:grid;gap:9px}.card{display:flex;align-items:center;gap:11px;min-height:54px;padding:10px 13px;border:1px solid #ded9cf;border-radius:12px;background:#fff;color:var(--ink);box-shadow:0 3px 9px #2927190b;cursor:grab;user-select:none;touch-action:none;transition:transform .14s,box-shadow .14s,border-color .14s}.card:hover{border-color:#a6a3e7;box-shadow:0 7px 16px #29271912}.card:active,.card.dragging{cursor:grabbing;transform:rotate(-1deg) scale(1.02);box-shadow:0 12px 24px #29271920;z-index:5}.card:focus-visible,.button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}.num{display:grid;place-items:center;flex:0 0 30px;width:30px;height:30px;border-radius:9px;background:#ecebff;color:var(--blue);font-size:13px;font-weight:850}.name{font-weight:750}.bank{padding:19px}.bank h2{margin-bottom:4px}.bank p{margin:0 0 14px;color:var(--muted);font-size:12px}.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:15px}.button{appearance:none;border:1.5px solid var(--ink);border-radius:9px;background:var(--card);color:var(--ink);padding:10px 14px;font:700 13px inherit;cursor:pointer}.button:hover{transform:translateY(-1px)}.button.primary{background:var(--blue);border-color:var(--blue);color:white}.message{min-height:24px;margin-top:12px;color:var(--muted);font-size:13px}.message.good{color:var(--green);font-weight:750}.message.bad{color:var(--red);font-weight:750}.hint{margin-top:12px;padding:12px 13px;border-left:3px solid var(--gold);border-radius:0 9px 9px 0;background:#fbf6e5;color:#5d594b;font-size:12px}.footer{margin-top:20px;text-align:center;color:var(--muted);font-size:11px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.touch-ghost{position:fixed;z-index:20;pointer-events:none;opacity:.92;transform:translate(-50%,-50%);width:min(280px,75vw)}
+@media(max-width:760px){.shell{padding:19px 13px 32px}.topline{margin-bottom:20px}.layout{grid-template-columns:1fr}.bank{grid-row:1}.pyramid-panel{grid-row:2;padding:14px}.slot{min-height:54px}.slot .card{width:min(74%,260px)}.pyramid{gap:7px}}
+</style>
+</head>
+<body>
+<main class="shell">
+  <header class="topline"><div class="brand"><span class="mark" aria-hidden="true">B</span> Learning lab</div><span class="pill">6 levels · no timer</span></header>
+  <section class="hero"><p class="eyebrow">Drag and drop · Bloom’s taxonomy</p><h1>Build the learning pyramid</h1><p class="sub">Arrange the six levels from the foundation at the bottom to the peak at the top.</p></section>
+  <div class="layout">
+    <section class="panel bank" aria-labelledby="bank-title"><h2 id="bank-title">LEVEL CARDS</h2><p>Drag a card onto a pyramid level. You can also select a card, then select a level.</p><div class="cards" id="cards" aria-label="Unplaced taxonomy level cards"></div><div class="actions"><button class="button primary" id="check">Check pyramid</button><button class="button" id="shuffle">Shuffle cards</button><button class="button" id="reset">Start over</button></div><div class="message" id="message" aria-live="polite">Tip: begin with Level 1 at the base.</div><div class="hint">Keyboard or touch: tap a card to select it, then tap a pyramid level to place it. Dragging works with a mouse or touch.</div></section>
+    <section class="panel pyramid-panel" aria-labelledby="pyramid-title"><div class="panel-head"><h2 id="pyramid-title">THE PYRAMID</h2><span class="tiny">PEAK ↑ · FOUNDATION ↓</span></div><div class="pyramid" id="pyramid" aria-label="Pyramid drop levels, top to bottom"></div></section>
+  </div>
+  <p class="footer">Bloom’s original taxonomy · Levels shown in the order supplied</p>
+</main>
+<script>
+(()=>{
+  const levels=[
+    {n:1,name:'Knowledge',hint:'Recall facts and information.'},
+    {n:2,name:'Comprehension',hint:'Explain ideas in your own words.'},
+    {n:3,name:'Application',hint:'Use knowledge in a situation.'},
+    {n:4,name:'Analysis',hint:'Break ideas apart and examine relationships.'},
+    {n:5,name:'Synthesis',hint:'Combine ideas to create something new.'},
+    {n:6,name:'Evaluation',hint:'Judge or defend using criteria.'}
+  ];
+  // Pyramid rows run peak-to-base; cards are correct when their number matches 6..1.
+  const pyramid=document.getElementById('pyramid'),cardsEl=document.getElementById('cards'),message=document.getElementById('message');
+  let order=[],placed=new Map(),selected=null,checked=false,drag=null;
+  const shuffled=()=>levels.map(x=>x.n).sort(()=>Math.random()-.5);
+  const cardData=n=>levels.find(x=>x.n===n);
+  function makeCard(n){const d=cardData(n),el=document.createElement('div');el.className='card';el.draggable=true;el.tabIndex=0;el.setAttribute('role','button');el.setAttribute('aria-label',`${d.name}. Select or drag to a pyramid level.`);el.dataset.card=n;el.innerHTML=`<span class="name">${d.name}</span>`;
+    el.addEventListener('click',()=>selectCard(n));el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectCard(n)}});
+    el.addEventListener('dragstart',e=>{drag=n;el.classList.add('dragging');e.dataTransfer.setData('text/plain',String(n));e.dataTransfer.effectAllowed='move'});
+    el.addEventListener('dragend',()=>{drag=null;el.classList.remove('dragging');document.querySelectorAll('.slot.over').forEach(x=>x.classList.remove('over'))});
+    el.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse')return;e.preventDefault();startTouchDrag(n,el,e)});return el}
+  function render(){cardsEl.replaceChildren();for(const n of order){if(![...placed.values()].includes(n))cardsEl.append(makeCard(n))}
+    pyramid.replaceChildren();for(let row=0;row<6;row++){const slot=document.createElement('div');slot.className='slot';slot.style.setProperty('--w',`${42+row*9}%`);slot.dataset.slot=String(row);slot.dataset.level=`L${6-row}`;slot.setAttribute('role','button');slot.tabIndex=0;slot.setAttribute('aria-label',`Pyramid position ${row+1}, level ${6-row}, ${placed.has(row)?`contains ${cardData(placed.get(row)).name}`:'empty'}`);
+      if(placed.has(row)){const card=makeCard(placed.get(row));slot.append(card);slot.classList.add('filled')}
+      const label=document.createElement('span');label.className='slot-label';label.textContent=row===0?'PEAK':row===5?'BASE':'';slot.append(label);
+      slot.addEventListener('dragover',e=>{e.preventDefault();slot.classList.add('over')});slot.addEventListener('dragleave',()=>slot.classList.remove('over'));slot.addEventListener('drop',e=>{e.preventDefault();slot.classList.remove('over');const n=Number(e.dataTransfer.getData('text/plain'))||drag;if(n)place(n,row)});
+      slot.addEventListener('click',()=>{if(selected)place(selected,row)});slot.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&selected){e.preventDefault();place(selected,row)}});
+      pyramid.append(slot)}
+    if(checked)paintResults()}
+  function selectCard(n){selected=n;document.querySelectorAll('.card').forEach(c=>c.style.outline=Number(c.dataset.card)===n?'3px solid var(--gold)':'');message.textContent=`Level ${n} ${cardData(n).name} selected. Choose a pyramid position.`;message.className='message'}
+  function place(n,row){const old=[...placed.entries()].find(([,v])=>v===n);if(old)placed.delete(old[0]);const displaced=placed.get(row);if(displaced)placed.delete(row);placed.set(row,n);if(displaced)order.push(displaced);order=order.filter(x=>x!==n);selected=null;checked=false;message.textContent=`Placed Level ${n} ${cardData(n).name}.`;message.className='message';render()}
+  function paintResults(){let correct=0;for(let row=0;row<6;row++){const slot=pyramid.children[row],n=placed.get(row);slot.classList.remove('correct','wrong');if(n){if(n===6-row){slot.classList.add('correct');correct++}else slot.classList.add('wrong')}}
+    if(correct===6){message.textContent='Perfect! You built the pyramid in the right order.';message.className='message good'}else{message.textContent=`${correct} of 6 levels are in the right position. Green is correct; pink needs a move.`;message.className='message bad'}}
+  function startTouchDrag(n,el,e){const ghost=el.cloneNode(true);ghost.classList.add('touch-ghost');document.body.append(ghost);drag={n,ghost};ghost.style.left=`${e.clientX}px`;ghost.style.top=`${e.clientY}px`;const move=ev=>{ghost.style.left=`${ev.clientX}px`;ghost.style.top=`${ev.clientY}px`;document.querySelectorAll('.slot.over').forEach(x=>x.classList.remove('over'));const under=document.elementFromPoint(ev.clientX,ev.clientY)?.closest('.slot');if(under)under.classList.add('over')};const end=ev=>{document.removeEventListener('pointermove',move);document.removeEventListener('pointerup',end);const under=document.elementFromPoint(ev.clientX,ev.clientY)?.closest('.slot');ghost.remove();drag=null;if(under)place(n,Number(under.dataset.slot))};document.addEventListener('pointermove',move);document.addEventListener('pointerup',end,{once:true})}
+  document.getElementById('check').addEventListener('click',()=>{checked=true;paintResults()});
+  document.getElementById('shuffle').addEventListener('click',()=>{order=shuffled();placed.clear();selected=null;checked=false;message.textContent='Cards shuffled. Arrange them from Level 6 at the peak to Level 1 at the base.';message.className='message';render()});
+  document.getElementById('reset').addEventListener('click',()=>{order=levels.map(x=>x.n);placed.clear();selected=null;checked=false;message.textContent='Ready when you are. Drag cards or select a card and a level.';message.className='message';render()});
+  order=shuffled();render();
+})();
+</script>
+</body>
+</html>
